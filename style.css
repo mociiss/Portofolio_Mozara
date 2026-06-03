@@ -1,0 +1,387 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #fff6f0;
+    font-family: 'Arimo', sans-serif;
+}
+
+nav{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: max-content;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    z-index: 10;
+}
+
+nav a{
+    text-decoration: none;
+    color: #56b34c;
+}
+
+nav .logo{
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+nav li{
+    padding: 0 15px;
+    border-left: 2px solid #56b34c;
+}
+
+nav li a{
+    padding: 5px 10px;
+    transition-duration: 0.4s;
+}
+
+nav li a:hover{
+    background-color: #306d29;
+    color: white;
+    border-radius: 2px;
+    transition: 0.3s ease;
+}
+
+main{
+    margin-top: 50px;
+}
+
+section{
+    scroll-margin-top: 65px;
+}
+
+#home{
+    color: #306d29;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.kiri{
+    position: relative;
+    width: 500px;
+    height: 500px;
+}
+
+.circle{
+    position: absolute;
+    border-radius: 50%;
+    animation: float 5s ease-in-out infinite;
+}
+
+.circle-1{
+    width: 250px;
+    height: 250px;
+    background: #8ac881;
+    top: -28px;
+    left: 16px;
+}
+
+.circle-2{
+    width: 300px;
+    height: 300px;
+    background: #1f8252;
+    bottom: 48px;
+    left: -15px;
+}
+
+.circle-3{
+    width: 280px;
+    height: 280px;
+    background: #509c47;
+    bottom: -7px;
+    left: 185px;
+    z-index: 2;
+}
+
+.kiri img{
+    position: absolute;
+    width: 210px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 100%;
+    z-index: 1;
+    top: 48px;
+    left: 132px;
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-10px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.kanan{
+    text-align: right;
+    padding-right: 42px;
+    margin-top: -80px;
+}
+
+.kanan span{
+    font-size: 25px;
+}
+
+.kanan h1{
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1;
+    margin-top: -8px;
+}
+
+.kanan p{
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    margin-bottom: 30px;
+}
+.kanan a{
+    text-decoration: none;
+    color: #fff6f0;
+}
+
+.kanan .btn{
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 500;
+    background-color: #306d29;
+    padding: 10px 15px;
+    border-radius: 50px;
+    transition-duration: 0.4s;
+}
+
+.kanan .btn:hover{
+    font-size: large;
+    transform: 0.5s ease;
+}
+
+#about{
+    position: relative;
+    min-height: 100vh;
+}
+
+.nav-about{
+    font-size: 26px;
+    padding: 10px 25px 10px 10px;
+    background-color: #306d29;
+    color: white;
+    width: fit-content;
+    border-radius: 0 30px 30px 0;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.highlight1{
+    margin-top: 22px;
+    background-color: #8BBCA4;
+    font-size: 24px;
+    width: fit-content;
+    padding: 3px;
+}
+
+.highlight2{
+    background-color: #95B592;
+    font-size: 24px;
+    width: fit-content;
+    padding: 3px;
+}
+
+#about p{
+    color: #306d29;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: justify;
+    width: 70%;
+    font-size: 18px;
+    margin-bottom: 12px;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+.more p{
+    font-weight: bold;
+    color: #306d29;
+}
+
+#about .more a{
+    text-decoration: none;
+    color: white;
+    margin-top: 10px;
+}
+
+#about .more .btn{
+    margin-left: 10px;
+    background-color: #95B592;
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition-duration: 0.4s;
+}
+
+.about-gallery{
+    position: absolute;
+    right: 40px;
+    top: 60px;
+}
+
+.foto{
+    position: absolute;
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+    transition: .3s ease;
+}
+
+.foto:hover{
+    transform: scale(1.05);
+}
+
+.foto-1{
+    top: 0;
+    right: 0;
+    transform: rotate(-15deg);
+}
+
+.foto-2{
+    top: 150px;
+    right: 20px;
+    transform: rotate(6deg);
+}
+
+.foto-3{
+    top: 280px;
+    right: 0;
+    transform: rotate(-14deg);
+}
+
+.nav-porto{
+    font-family: 'Outfit', sans-serif;
+    padding: 10px;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 700;
+    background-color: #306d29;
+}
+
+.porto-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.porto-list{
+    margin-top: 10px;
+    width: calc(33.333% - 14px);
+}
+
+.porto-card{
+    position: relative;
+    background-color: #306d29;
+    height: 200px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.porto-card img{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.porto-title{
+    background-color: rgba(42, 103, 13, 0.5);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700
+}
+
+.porto-desc{
+    margin-top: 10px;
+    width: 100%;
+    background-color: #306d29;
+    border-radius: 3px;
+    color: white;
+    padding: 10px;
+    text-align: justify;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+.porto-desc p{
+    margin-bottom: 15px;
+}
+
+.porto-desc a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+}
+
+#contact{
+    display: flex;
+    margin-top: 200px;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 150px;
+}
+
+.nav-contact{
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    padding: 10px 55px;
+    width: fit-content;
+    background-color: #C1DCCF;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#contact h1{
+    margin-top: -15px;
+    font-size: 48px;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+#contact img{
+    width: 38px;
+    height: 38px;
+    margin: 5px;
+}
+
+footer{
+    height: 300px;
+    background-color: #306d29;
+}
