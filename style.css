@@ -233,6 +233,8 @@ section{
 #about .more .btn{
     margin-left: 10px;
     background-color: #95B592;
+    color: black;
+    font-weight: 500;
     padding: 10px 15px;
     border-radius: 20px;
     transition-duration: 0.4s;
@@ -295,20 +297,20 @@ section{
 
 .porto-list{
     margin-top: 10px;
-    width: calc(33.333% - 14px);
+    width: calc(50% - 20px);
 }
 
 .porto-card{
     position: relative;
     background-color: #306d29;
-    height: 200px;
+    height: 180px;
     width: 100%;
     border-radius: 10px;
     overflow: hidden;
 }
 
 .porto-card img{
-    height: 200px;
+    height: 180px;
     width: 100%;
     object-fit: cover;
     display: block;
@@ -322,8 +324,13 @@ section{
     padding: 15px;
     color: white;
     text-align: center;
-    font-family: 'Outfit', sans-serif;
-    font-weight: 700
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.porto-title:hover{
+    color: rgb(115, 115, 186);
 }
 
 .porto-desc{
@@ -342,12 +349,11 @@ section{
 }
 
 .porto-desc a{
-    text-decoration: none;
     color: white;
     text-align: center;
     font-size: 18px;
     font-family: 'Outfit', sans-serif;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 #contact{
