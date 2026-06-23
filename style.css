@@ -57,6 +57,23 @@ nav li a:hover{
     transition: 0.3s ease;
 }
 
+/* Hamburger menu (hidden di desktop) */
+.hamburger{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span{
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #56b34c;
+    border-radius: 3px;
+    transition: 0.3s ease;
+}
+
 main{
     margin-top: 50px;
 }
@@ -71,12 +88,14 @@ section{
     justify-content: space-between;
     align-items: center;
     min-height: 100vh;
+    padding: 0 40px;
 }
 
 .kiri{
     position: relative;
     width: 500px;
     height: 500px;
+    flex-shrink: 0;
 }
 
 .circle{
@@ -123,17 +142,9 @@ section{
 }
 
 @keyframes float{
-    0%{
-        transform: translateY(0);
-    }
-
-    50%{
-        transform: translateY(-10px);
-    }
-
-    100%{
-        transform: translateY(0);
-    }
+    0%{ transform: translateY(0); }
+    50%{ transform: translateY(-10px); }
+    100%{ transform: translateY(0); }
 }
 
 .kanan{
@@ -157,6 +168,7 @@ section{
     font-family: 'Zen Kaku Gothic New', sans-serif;
     margin-bottom: 30px;
 }
+
 .kanan a{
     text-decoration: none;
     color: #fff6f0;
@@ -179,6 +191,7 @@ section{
 #about{
     position: relative;
     min-height: 100vh;
+    padding-bottom: 60px;
 }
 
 .nav-about{
@@ -293,6 +306,7 @@ section{
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    padding: 20px;
 }
 
 .porto-list{
@@ -358,10 +372,12 @@ section{
 
 #contact{
     display: flex;
+    flex-direction: column;
     margin-top: 200px;
     justify-content: center;
     text-align: center;
     margin-bottom: 150px;
+    padding: 0 20px;
 }
 
 .nav-contact{
@@ -388,6 +404,242 @@ section{
 }
 
 footer{
-    height: 300px;
     background-color: #306d29;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.footer-content h3{
+    font-family: 'Outfit', sans-serif;
+    font-size: 28px;
+}
+
+.footer-content p{
+    margin-top: 10px;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+.copyright{
+    font-size: 14px;
+    opacity: .8;
+}
+
+/* ============================================
+   TABLET — lebar 768px hingga 1024px
+   ============================================ */
+@media (max-width: 1024px) {
+    #home{
+        padding: 0 20px;
+        gap: 20px;
+    }
+
+    .kiri{
+        width: 380px;
+        height: 380px;
+    }
+
+    .circle-1{ width: 190px; height: 190px; }
+    .circle-2{ width: 230px; height: 230px; }
+    .circle-3{ width: 210px; height: 210px; left: 140px; }
+
+    .kiri img{
+        width: 160px;
+        height: 230px;
+        top: 36px;
+        left: 100px;
+    }
+
+    .kanan h1{ font-size: 36px; }
+    .kanan span{ font-size: 20px; }
+
+    .porto-list{
+        width: calc(50% - 20px);
+    }
+
+    .about-gallery{
+        right: 20px;
+        top: 40px;
+    }
+
+    .foto{
+        width: 200px;
+        height: 120px;
+    }
+
+    .foto-2{ top: 120px; }
+    .foto-3{ top: 225px; }
+
+    #about p{ width: 55%; }
+}
+
+/* ============================================
+   MOBILE — lebar di bawah 768px
+   ============================================ */
+@media (max-width: 768px) {
+
+    /* --- Navbar mobile --- */
+    nav{
+        padding: 15px 20px;
+        flex-wrap: wrap;
+    }
+
+    .hamburger{
+        display: flex;
+    }
+
+    nav ul{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+        gap: 8px;
+    }
+
+    nav ul.open{
+        display: flex;
+    }
+
+    nav li{
+        border-left: none;
+        border-bottom: 1px solid #56b34c;
+        padding: 8px 0;
+    }
+
+    /* --- Section home mobile --- */
+    #home{
+        flex-direction: column-reverse;
+        justify-content: center;
+        padding: 100px 20px 60px;
+        gap: 30px;
+        min-height: 100vh;
+    }
+
+    .kiri{
+        width: 260px;
+        height: 260px;
+    }
+
+    .circle-1{ width: 130px; height: 130px; top: -15px; left: 10px; }
+    .circle-2{ width: 160px; height: 160px; bottom: 25px; left: -10px; }
+    .circle-3{ width: 150px; height: 150px; bottom: -5px; left: 100px; }
+
+    .kiri img{
+        width: 115px;
+        height: 165px;
+        top: 26px;
+        left: 72px;
+    }
+
+    .kanan{
+        text-align: center;
+        padding-right: 0;
+        margin-top: 0;
+    }
+
+    .kanan h1{ font-size: 32px; }
+    .kanan span{ font-size: 18px; }
+    .kanan p{ font-size: 15px; }
+
+    /* --- Section about mobile --- */
+    #about{
+        padding-bottom: 40px;
+    }
+
+    .about-gallery{
+        position: relative;
+        right: auto;
+        top: auto;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+        padding: 0 20px;
+        height: auto;
+    }
+
+    .foto{
+        position: relative;
+        width: 45%;
+        height: 120px;
+        transform: none !important;
+    }
+
+    .foto:hover{
+        transform: scale(1.05) !important;
+    }
+
+    #about p{
+        width: 90%;
+        font-size: 16px;
+    }
+
+    .highlight1, .highlight2{
+        font-size: 20px;
+    }
+
+    /* --- Porto mobile --- */
+    .porto-list{
+        width: 100%;
+    }
+
+    .porto-container{
+        padding: 15px;
+    }
+
+    /* --- Contact mobile --- */
+    #contact{
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+
+    #contact h1{
+        font-size: 34px;
+    }
+
+    .nav-contact{
+        font-size: 20px;
+        padding: 10px 30px;
+    }
+
+    /* --- Footer mobile --- */
+    .footer-content h3{
+        font-size: 22px;
+    }
+}
+
+/* ============================================
+   MOBILE KECIL — lebar di bawah 480px
+   ============================================ */
+@media (max-width: 480px) {
+    .kanan h1{ font-size: 26px; }
+    .kanan span{ font-size: 16px; }
+
+    .kiri{
+        width: 220px;
+        height: 220px;
+    }
+
+    .circle-1{ width: 110px; height: 110px; }
+    .circle-2{ width: 135px; height: 135px; }
+    .circle-3{ width: 125px; height: 125px; left: 85px; }
+
+    .kiri img{
+        width: 95px;
+        height: 138px;
+        top: 22px;
+        left: 60px;
+    }
+
+    .nav-about{ font-size: 20px; }
+    .highlight1, .highlight2{ font-size: 17px; }
+
+    #about p{ font-size: 14px; }
+
+    .foto{ width: 100%; }
+
+    #contact h1{ font-size: 28px; }
+
+    .porto-container{ padding: 10px; }
 }
