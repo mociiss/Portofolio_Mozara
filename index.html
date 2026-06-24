@@ -16,6 +16,11 @@
     <header>
         <nav>
             <div class="logo"><a href="#home">MozaraVitaya</a></div>
+            <div class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Me</a></li>
@@ -119,4 +124,18 @@
         </footer>
     </main>
 </body>
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navUl = document.querySelector('nav ul');
+
+    hamburger.addEventListener('click', () => {
+        navUl.classList.toggle('open');
+    });
+
+    navUl.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navUl.classList.remove('open');
+        });
+    });
+</script>
 </html>
