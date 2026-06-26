@@ -60,7 +60,7 @@
             <p>Lulusan SMK Rekayasa Perangkat Lunak yang memiliki ketertarikan pada pengembangan web dan teknologi informasi. Berpengalaman mengerjakan proyek sistem inventaris berbasis web selama masa pendidikan serta aktif dalam kegiatan organisasi sekolah. Memiliki semangat belajar yang tinggi dan siap mengembangkan kemampuan teknis maupun profesional di dunia kerja.</p>
             <div class="more">
             <p>Lebih lanjut :</p>
-            <a href="CV_MozaraVitaya.pdf" download class="btn">Download CV</a>
+            <a href="Mozara Vitaya.pdf" download class="btn">Download CV</a>
             </div>
             <div class="about-gallery">
                 <img src="assets/pkl.png" class="foto foto-1" alt="">
@@ -97,6 +97,32 @@
                     </div>
                 </div>
             </div>
+
+            <div class="porto-creative">
+                <div class="poster-container">
+                    <figure class="porto porto-1" onclick="bukaGambar(this)"> 
+                        <img src="assets/template sg 1.png" alt="">
+                        <figcaption>Judul 1</figcaption>
+                    </figure>
+                    <figure class="porto porto-2" onclick="bukaGambar(this)">
+                        <img src="assets/template sg 2.png" alt="">
+                        <figcaption>Judul 2</figcaption>
+                    </figure>
+                    <figure class="porto porto-3" onclick="bukaGambar(this)">
+                        <img src="assets/poster1.jpeg" alt="">
+                        <figcaption>Judul 3</figcaption>
+                    </figure>
+                </div>
+                <div class="link-container">
+                    <span>Content Editing</span>
+                    <a href="https://www.instagram.com/reel/DLP3FevTPG6/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==" class="btn-link">Konten Recap Video</a>
+                    <a href="https://www.instagram.com/reel/DLV_B7kyfTD/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="btn-link">Konten Promosi Sekolah</a>
+                    <a href="https://www.instagram.com/reel/DLwrPmQPWeP/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==" class="btn-link">Konten Promosi Ekskul</a>
+                    <a href="https://www.instagram.com/reel/C9rjNpDPcJB/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="btn-link">Konten Wawancara</a>
+                    <span>Talent</span>
+                    <a href="https://drive.google.com/drive/folders/1-0u84sfUSuKBNajHWsPzus8zgHIaF2Xw?hl=ID" class="btn-linkT">Gdrive</a>
+                </div>
+            </div>
         </section>
 
         <section id="contact">
@@ -107,15 +133,15 @@
                 <h1>Hubungi Saya</h1>
                 <a href=""><img src="assets/email.png" alt="Email"></a>
                 <a href=""><img src="assets/phone-call.png" alt="Telp"></a>
-                <a href=""><img src="assets/instagram.png" alt="Instagram"></a>
-                <a href=""><img src="assets/github.png" alt="GitHub"></a>
+                <a href="https://www.instagram.com/mozaravty?igsh=dDd2YmhwY3J2ZGsy&utm_source=qr"><img src="assets/instagram.png" alt="Instagram"></a>
+                <a href="https://github.com/mociiss" target="_blank"><img src="assets/github.png" alt="GitHub"></a>
             </div>
         </section>
 
         <footer>
             <div class="footer-content">
                 <h3>Let's work together!</h3>
-                <p>Terbuka untuk peluang kerja, magang, dan kolaborasi di bidang teknologi.</p>
+                <p>Terbuka untuk peluang kerja, magang, dan kolaborasi di bidang terkait.</p>
 
                 <p class="copyright">
                     © 2026 Mozara Vitaya
@@ -124,8 +150,29 @@
         </footer>
     </main>
 </body>
+
 <script>
-    const hamburger = document.querySelector('.hamburger');
+    document.querySelectorAll('.porto').forEach(porto => {
+        porto.addEventListener('click', () => {
+
+            if (porto.classList.contains('aktif')) {
+                document.querySelectorAll('.porto').forEach(p => {
+                    p.classList.remove('aktif', 'redup');
+                });
+                return;
+            }
+
+            document.querySelectorAll('.porto').forEach(p => {
+                p.classList.remove('aktif');
+                p.classList.add('redup');
+            });
+
+            porto.classList.remove('redup');
+            porto.classList.add('aktif');
+        });
+    });
+
+    const hamburger = document.getElementById('hamburger');
     const navUl = document.querySelector('nav ul');
 
     hamburger.addEventListener('click', () => {

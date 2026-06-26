@@ -253,7 +253,14 @@ section{
     font-weight: 500;
     padding: 10px 15px;
     border-radius: 20px;
-    transition-duration: 0.4s;
+    transition: 0.4s ease;
+}
+
+#about .btn:hover{
+    margin-top: 5px;
+    padding: 12px 17px;
+    font-weight: 600;
+    transform: 0.5s ease;
 }
 
 .about-gallery{
@@ -301,6 +308,7 @@ section{
     font-size: 30px;
     text-align: center;
     font-weight: 700;
+    z-index: 4;
     background-color: #306d29;
 }
 
@@ -373,10 +381,141 @@ section{
     font-weight: 500;
 }
 
+.porto-creative {
+    display: flex;
+    align-items: flex-start;
+    gap: 100px;
+    padding: 50px 150px;
+}
+
+.poster-container {
+    position: relative;
+    width: 280px;
+    height: 260px;
+}
+
+.porto {
+    position: absolute;
+    width: 70%;
+    height: auto;
+    aspect-ratio: 9/16;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.porto-1 {
+    top: 20px;
+    left: 0;
+    transform: rotate(-12deg);
+    z-index: 1;
+}
+
+.porto-2 {
+    top: 10px;
+    left: 30px;
+    transform: rotate(-4deg);
+    z-index: 2;
+}
+
+.porto-3 {
+    top: 0;
+    left: 55px;
+    transform: rotate(6deg);
+    z-index: 3;
+}
+
+.porto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+.porto figcaption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 6px 8px;
+    background-color: rgb(48 109 41 / 0%);
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    backdrop-filter: blur(1px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.porto:hover figcaption,
+.porto.aktif figcaption {
+    opacity: 1;
+}
+
+.porto.aktif {
+    width: 70%;
+    height: auto;
+    aspect-ratio: 9/16;
+    z-index: 10;
+    transform: rotate(0deg) !important;
+    top: 10px !important;
+    left: 10px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.porto.redup {
+    transform: scale(0.88) !important;
+    filter: brightness(0.6);
+    z-index: 1;
+}
+
+.link-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    padding-top: 5px;
+}
+
+.link-container span {
+    font-size: 18px;
+    font-weight: 700;
+    color: #306d29;
+    margin-top: 5px;
+}
+
+.link-container span:first-child {
+    margin-top: 0;
+}
+
+.btn-link,
+.btn-linkT {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #306d29;
+    color: white;
+    text-align: center;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-link:hover,
+.btn-linkT:hover {
+    background-color: #4e9746;
+}
+
 #contact{
     display: flex;
     flex-direction: column;
-    margin-top: 200px;
+    margin-top: 150px;
     justify-content: center;
     text-align: center;
     margin-bottom: 150px;
@@ -404,6 +543,13 @@ section{
     width: 38px;
     height: 38px;
     margin: 5px;
+    transition: .3s ease;
+}
+
+#contact img:hover{
+    width: 42px;
+    height: 42px;
+    margin-top: 0;
 }
 
 footer{
@@ -561,31 +707,40 @@ footer{
         position: relative;
         right: auto;
         top: auto;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        margin-top: 20px;
-        padding: 0 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-top: 25px;
+        padding: 0 20px 20px;
         height: auto;
     }
 
     .foto {
-        position: relative;  
+        position: relative;
         width: 100%;
-        height: 120px;
+        max-width: 340px;
+        height: 200px;
         object-fit: cover;
+        border-radius: 10px;
         transform: none !important;
         top: auto !important;
         right: auto !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease;
     }
 
-    .foto-3 {
-        grid-column: 1 / -1;
-        height: 130px;
+    .foto-1, .foto-2, .foto-3 {
+        transform: none !important;
     }
 
     .foto:hover {
         transform: scale(1.03) !important;
+    }
+
+    .btn{
+        padding: 8px 12px;
+        font-size: 12px;
     }
 
     .porto-container {
@@ -601,6 +756,33 @@ footer{
         height: 160px;
     }
 
+    .porto-creative{
+        align-items: center;
+        gap: 30px;
+        padding: 20px 40px 20px 35px;
+    }
+
+    .poster-container{
+        width: 110px;
+        height: 180px;
+        margin-top: 20px;
+    }
+
+    .porto{
+        width: 60%;
+        height: auto;
+        aspect-ratio: 9 / 16;
+    }
+
+    .link-container span{
+        font-size: 12px;
+    }
+
+    .btn-link, .btn-linkT{
+        font-size: 8px;
+        padding: 8px;
+    }
+
     #contact {
         margin-top: 60px;
         margin-bottom: 60px;
@@ -613,6 +795,7 @@ footer{
     .nav-contact {
         font-size: 20px;
         padding: 10px 30px;
+        margin-bottom: 12px;
     }
 
     .footer-content h3 {
@@ -621,9 +804,16 @@ footer{
 }
 
 @media (max-width: 480px) {
-    .kanan h1 { font-size: 24px; }
-    .kanan span { font-size: 15px; }
-    .kanan p { font-size: 14px; }
+    .kanan h1 { 
+        font-size: 24px;
+    }
+
+    .kanan span {
+        font-size: 15px;
+    }
+    .kanan p {
+        font-size: 14px;
+    }
 
     .kiri {
         width: 200px;
@@ -642,16 +832,49 @@ footer{
     }
 
     .nav-about { font-size: 19px; }
-    .highlight1, .highlight2 { font-size: 16px; }
+    .highlight1, .highlight2 { 
+        font-size: 16px;
+    }
 
-    #about p { font-size: 14px; }
+    #about{
+        margin-bottom: -150px;
+    }
 
-    .foto { width: 65%; max-width: 65%; }
-    .foto-3 { max-width: 65%; }
+    #about p { 
+        font-size: 14px; 
+    }
 
-    #contact h1 { font-size: 26px; }
-    #contact { margin-top: 40px; margin-bottom: 40px; }
+    .about-gallery {
+        display: none;
+    }
 
-    .porto-container { padding: 8px; }
-    .porto-card { height: 145px; }
+    #contact h1 {
+        font-size: 26px;
+    }
+
+    #contact {
+        margin-bottom: 40px; 
+    }
+
+    .nav-porto{
+        padding: 8px;
+        font-size: 25px;
+    }
+
+    .porto-container { 
+        margin: 18px;
+        padding: 8px; 
+    }
+
+    .porto-title{
+        font-size: 13px;
+    }
+
+    .porto-desc{
+        font-size: 13px;
+    }
+
+    .porto-card { 
+        height: 145px;
+    }
 }
